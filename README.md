@@ -1,2 +1,3 @@
 # ToDo-List
-React.js App
+In this to-do application built with JavaScript library React.js, I leveraged the power of components, props, and state management to create a dynamic and user-friendly interface. By using hooks like `useState` and `useEffect`, I efficiently managed state and side effects. I also implemented routing to enable seamless navigation between different pages of the application. The app includes features for creating, updating, deleting and displaying to-do items, with a responsive layout that adapts to user interactions. Along with all this I have implemented search functionality, priority functionality and due date functionality. For the styling, I have included frontend CSS framework Bootstrap and its utility classes which also makes my website responsive.
+
