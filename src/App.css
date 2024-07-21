@@ -1,0 +1,18 @@
+body{
+  background-color: black;
+}
+#right{
+  animation: colorChange 3s infinite;
+}
+@keyframes colorChange{
+  0% { color: red; }
+  50% { color: blue; }
+  100% { color: green; }
+}
+.front img{
+  max-width: 35%;
+}
+.front{
+  display: flex;  
+}
+
