@@ -1,4 +1,7 @@
+/*TodoItem.js handles the form while it is currently being edited using hooks to manage the state changes.
+The updated values are then passed as prop to TodoItem which is mapped in TodoList.js and then rendered in TodoHeader.js where the updates are handled.*/
 import React, { useState } from 'react';
+import './style.css';
 
 function TodoItem({ todo, updateTodo, deleteTodo, toggleComplete }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -17,7 +20,7 @@ function TodoItem({ todo, updateTodo, deleteTodo, toggleComplete }) {
   };
 
   return (
-    <li className="list-group-item d-flex align-items-center">
+    <li className="list-group-item d-flex align-items-center options">
       <input 
         type="checkbox" 
         checked={todo.completed} 
@@ -45,9 +48,9 @@ function TodoItem({ todo, updateTodo, deleteTodo, toggleComplete }) {
             value={priority} 
             onChange={(e) => setPriority(e.target.value)}
           >
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
+            <option className='options' value="High">High</option>
+            <option className='options' value="Medium">Medium</option>
+            <option className='options' value="Low">Low</option>
           </select>
         </>
       ) : (
@@ -58,11 +61,11 @@ function TodoItem({ todo, updateTodo, deleteTodo, toggleComplete }) {
           >
             {todo.text}
           </span>
-          <span className="me-2">Due: {todo.dueDate || 'N/A'}</span>
-          <span className="badge bg-secondary me-2">{todo.priority}</span>
+          <span className="me-2 date">Due: {todo.dueDate || 'N/A'}</span>
+          <span className="badge me-1">{todo.priority}</span>
         </>
       )}
-      <button onClick={() => deleteTodo(todo.id)} className="btn btn-danger">Delete</button>
+      <button onClick={() => deleteTodo(todo.id)} className="btn custom">Delete</button>
     </li>
   );
 }

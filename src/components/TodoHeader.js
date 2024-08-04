@@ -1,18 +1,23 @@
+/*The Todo information received from user input from TodoForm.js and TodoList.js will have different functionality here.
+It can be added, updated, deleted, marked as completed and using hooks which manage the state and will be displayed.
+As well as todos completed/ total todos will be displayed.
+*/
 import React from 'react';
 import { useState, useEffect } from 'react';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
+import './style.css';
 
 
 function TodoHead({ todos_completed, total_todos }) {
     return (
-        <div className="card bg-dark text-white text-center ms-5 border border-warning" >
+        <div className="card custom-card" >
             <div className='mt-5'>
                 <h1>Tasks Done</h1>
                 <h2>Keep It Up.</h2>
             </div>
-            <div className='w-150 h-150 rounded-circle bg-success m-5'>
-                <h1 className='m-5'>{todos_completed}/{total_todos}</h1>
+            <div className='m-5'>
+                <h1>{todos_completed}/{total_todos}</h1>
             </div>
         </div>
     )
@@ -34,6 +39,7 @@ function TodoHeader() {
     const addTodo = (todo) => {
         setTodos([...todos, todo]);
     };
+    
 
     const updateTodo = (updatedTodo) => {
         setTodos(todos.map(todo => (todo.id === updatedTodo.id ? updatedTodo : todo)));
@@ -53,19 +59,28 @@ function TodoHeader() {
 
     const todos_completed = todos.filter(todo => todo.completed).length;
     const total_todos = todos.length;
+    const backgroundStyle={
+        backgroundImage: 'url(/img1.png)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        height: '100vh',
+        margin: 0,
+      };
 
     return (
-        <div className='d-flex mt-5 pt-5'>
+        <div style={backgroundStyle}>
+        <div className=' pt-4'>
             <div className='flex-grow-0'><TodoHead todos_completed={todos_completed} total_todos={total_todos} />;</div>
-            <div className="container flex-grow-1">
+            <div className="container flex-grow-1 todo">
                 <div className="row justify-content-center">
                     <div className="col-md-8">
-                        <div className="card bg-dark text-white border-yellow">
+                        <div className="card card-1 mb-5">
                             <div className="card-body ">
                                 <h1 className="card-title text-center mb-4 ">Todo App</h1>
                                 <input
                                     type="text"
-                                    className="form-control mb-4"
+                                    className="form-control mb-4 input-1"
                                     placeholder="Search todos"
                                     value={search}
                                     onChange={(e) => setSearch(e.target.value)}
@@ -82,6 +97,7 @@ function TodoHeader() {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

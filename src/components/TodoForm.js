@@ -1,4 +1,8 @@
+/*The Main Todo Form.
+Users type the todo name, select the date and priority level and click on the add button.
+Used the hooks to manage the state of these inputs and prevent default form submission. */
 import React, { useState } from 'react';
+import './style.css'
 
 function TodoForm({ addTodo }) {
   const [input, setInput] = useState('');
@@ -8,8 +12,8 @@ function TodoForm({ addTodo }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input.trim()) {
-      addTodo({ id: Date.now(), text: input, completed: false, dueDate, priority });
-      setInput('');
+      addTodo({ id: Date.now(),text: input, completed: false,  dueDate, priority });
+      setInput(''); 
       setDueDate('');
       setPriority('Medium');
     }
@@ -46,7 +50,7 @@ function TodoForm({ addTodo }) {
         </select>
       </div>
       <div className='d-flex justify-content-center'>
-      <button type="submit" className="btn btn-dark">Add</button>
+      <button type="submit" className="custom">Add</button>
       </div>
     </form>
   );

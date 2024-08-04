@@ -1,0 +1,76 @@
+html,body{
+    background-color: #483434; 
+}
+
+  /*Header.js*/
+.head{
+    color: #fff3e4;
+    margin:0 27%;
+    background-color: #483434;
+  }
+  /*TodoForm.js,Header.js, Login.js,SignUp.js, TodoItem.js*/
+.custom, .custom-card-1 button, .badge{
+    background-color: #eed6c4;
+    color: #483434;
+    border-color:#483434;
+    border-radius: 10%;
+}
+.custom:hover,.custom-card-1 button:hover{
+    background-color: #6b4f4f;
+    color: #eed6c4;
+    border-color: #483434;
+}
+/*Login.js, SignUp.js*/
+.custom-card-1{
+    background-color: #483434;  
+    border: 2px solid #fff3e4;
+    padding: 3%;
+    min-width: 70%;
+}
+.custom-card-1{
+    margin: 10% 0;
+    color:#fff3e4;
+}
+.custom-card-1 input{
+    border-color: #fff3e4;
+}
+.container-1 {
+    display: flex;
+    justify-content: center;
+  }
+/*TodoHeader.js*/
+.custom-card{ 
+    background-color: #483434;
+    color: #fff3e4;
+    border-color:#fff3e4;
+    text-align: center;
+    margin: 0 30%;
+}
+.card-1{
+    background-color: #483434;
+    color: #fff3e4;
+    border-color:#fff3e4;
+}
+.todo{
+    padding: 0 20%;
+}
+/*TodoHeader.js,TodoForm.js,TodoItem.js*/
+.input-1,.form-control,.options{
+    background-color: #fff3e4;
+    color:#483434;
+
+}
+/*Login.js*/
+.link{
+    text-decoration: underline;
+    text-decoration-color: #eed6c4;
+    color:#eed6c4;
+}
+.link:hover{
+    color: black;
+    text-decoration-color: black ;
+}
+/*TodoItem.js*/
+.date{
+    color:#483434;
+}
